@@ -1,0 +1,382 @@
+@import "functions"
+@import "helpers/variables"
+@import "mixins"
+@import "bootstrap"
+
+$colorPrimary: #E60012
+$colorBlack: #1c252c
+$colorBlackLight: #666
+$colorBlue: #24569d
+$colorRed: #ea094b
+$colorGreen: #9fd0cc
+$colorGreenDark: #00857e
+$colorYellow: #f3dd6d
+$colorWhite: #ffffff
+  
+body
+  color: $colorBlack
+  font-family: Calibri, Microsoft JhengHei
+  background: url("../images/bg.gif") repeat center top
+
+ul, ol
+  padding-left: 20px
+  line-height: 26px
+
+ul ol, ol ol
+  list-style: lower-alpha
+
+#gotop
+  display: block
+  position: fixed
+  bottom: 0
+  right: 50px
+  height: 80px
+  width: 90px
+  background-color: $colorBlue
+  border-radius: 10px 10px 0 0
+  cursor: pointer
+  transition: 0.25s
+  z-index: 99
+  &:hover
+    height: 95px
+  &:before, &:after
+    position: absolute
+    color: $colorWhite
+    font-weight: bold
+    left: 50%
+    transform: translate(-50%, -50%)
+  &:before
+    content: "▲"
+    font-size: 18px
+    top: 30%
+  &:after
+    content: "top"
+    font-size: 24px
+    top: 50%
+
+.highlight_blue
+  color: $colorBlue
+  font-weight: bold
+
+.highlight_link_blue
+  color: $colorBlue
+  font-weight: bold
+  text-decoration: underline
+  transition-duration: 0.3s
+  &:hover
+    color: $colorGreenDark
+    text-decoration: none
+
+.highlight_red
+  color: $colorRed
+  font-weight: bold
+
+.highlight_link_red
+  color: $colorRed
+  font-weight: bold
+  text-decoration: underline
+  transition-duration: 0.3s
+  &:hover
+    color: $colorGreenDark
+    text-decoration: none
+
+.highlight_link_yellow
+  color: $colorYellow
+  text-decoration: underline
+  transition-duration: 0.3s
+  &:hover
+    color: $colorYellow
+    text-decoration: none
+
+.highlight_green
+  line-height: 24px
+  background-color: $colorGreenDark
+  color: $colorWhite
+  display: inline-block
+  padding: 10px 20px
+  border-left: solid 8px $colorGreen
+
+.ps
+  color: $colorBlackLight
+  font-size: 14px
+
+.table
+  caption
+    caption-side: top
+  thead tr th, tbody tr td
+    text-align: center
+    vertical-align: middle
+
+.table-bordered thead tr th
+  border-bottom-width: 1px
+  background-color: $colorGreenDark
+  color: $colorWhite
+  font-weight: 400
+
+#section_header
+  background-color: $colorPrimary
+  padding: 3px 0
+  .rd
+    margin-right: 10px
+    img
+      width: 80px
+  .fb img, .line img
+    width: 30px
+    margin-right: 5px
+
+.carousel-inner .item img
+  margin: 0 auto
+
+.navbar .navbar-collapse
+  font-size: 16px
+
+.navbar-nav .dropdown-menu
+  .menu_title
+    color: $colorBlack
+    padding: 3px 20px
+    font-size: 16px
+    font-weight: bold
+    clear: both
+    line-height: 1.7
+    white-space: nowrap
+  li a
+    color: $colorBlackLight
+
+#section_nav
+  background-color: $gray-100
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15)
+#section_main
+  margin: 20px auto
+  .container
+    background-color: $colorWhite
+    padding: 15px 40px
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15)
+    .content
+      line-height: 26px
+      .page-header
+        margin: 20px 0 15px
+        padding-bottom: 0
+        border-bottom: 1px solid #ccc
+      .main_img
+        text-align: center
+        margin: 1rem auto
+        img
+          width: 60%
+      .subtitle
+        background-image: linear-gradient(to right, #f0f0f0 0%, rgba(255, 255, 255, 0) 100%)
+        height: 30px
+        margin-top: 5px
+        margin-bottom: 12px
+        span
+          display: inline-block
+          background-color: $colorBlue
+          color: $colorWhite
+          padding: 0 10px
+          line-height: 30px
+          vertical-align: top
+  
+#section_main .container .content .all-tab
+  margin: 1.5rem auto
+  .tabs-item
+    margin-bottom: 1.5rem
+    .nav-link
+      color: $colorBlue
+  .tab-container
+    margin: 1rem auto
+    .tab-content
+      width: 100%
+      display: table
+      border: solid 1px #ccc
+      border-radius: 5px
+      margin: 1rem auto
+      padding: 0.8rem 0 0.8rem 2rem
+      color: $colorBlack
+      -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15)
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15)
+      -webkit-transition: 0.3s
+      -o-transition: 0.3s
+      transition: 0.3s
+      &:hover
+        border: solid 1px $colorGreen
+        -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25)
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25)
+        text-decoration: none
+      .list
+        display: table-cell
+        width: 80%
+        padding-right: 1rem
+        ol
+          margin-bottom: 0
+        h4
+          color: $colorBlue
+          font-size: 20px
+          font-weight: 700
+          margin-bottom: 0.4rem
+      .price
+        width: 20%
+        display: table-cell
+        vertical-align: middle
+        padding: 1rem 2rem
+        text-align: center
+        border-left: solid 1px #ccc
+        span
+          font-size: 2rem
+          font-weight: bold
+          color: $colorRed
+          white-space: nowrap
+          &:before
+            content: "$"
+            font-size: 1rem
+          &:after
+            content: "元起"
+            font-size: 1rem
+
+.nav-tabs > li.active > a
+  border: none
+  border-bottom: 2px solid $colorGreenDark
+  color: $colorGreenDark
+  &:focus, &:hover
+    border: none
+    border-bottom: 2px solid $colorGreenDark
+    color: $colorGreenDark
+
+#section_footer
+  background-color: $colorPrimary
+  color: $colorWhite
+  box-sizing: border-box
+  .container
+    position: relative
+    padding: 1.4rem 0 1rem
+    .logo
+      text-align: center
+      .rd_logo
+        width: 100%
+    .contact
+      padding-top: 10px
+      ul
+        list-style-type: none
+        display: inline-block
+        line-height: 22px
+        padding: 0 5px
+        .table_big
+          font-size: 1.1rem
+        .bold
+          font-weight: bold
+    .forphone
+      display: none
+    .qrcode
+      padding-top: 15px
+    .paymoney
+      position: absolute
+      font-size: 9px
+      right: 10%
+      top: 10%
+      color: rgba($colorYellow,0.8)
+@media screen and (max-width: 1024px) and (min-width: 769px)
+  #section_footer
+    .container
+      .row
+        ul
+          line-height: 20px
+          font-size: 0.9rem
+          .table_big
+            font-size: 0.9rem
+
+@media screen and (max-width: 768px) and (min-width: 481px)
+  #section_footer
+    .container
+      .row
+        .paymoney
+          position: initial !important
+          display: flex
+          justify-content: center
+          width: 100%
+          margin-top: 5px
+        .forpc
+          display: flex
+          justify-content: center
+        .qrcode
+          display: none
+
+@media screen and (max-width: 480px)
+  h2
+    font-size: 1.4rem
+  p, ul, ol
+    font-size: 0.9rem
+    line-height: 1.6
+  .highlight_green
+    padding: 5px 15px
+
+  .carousel
+    // padding-top: 40px !important
+    overflow: hidden
+    .carousel-indicators
+      margin-bottom: 5px
+    .carousel-inner
+      width: 150%
+      .carousel-item
+        right: 22%
+
+  .navbar-fixed-top
+    // top: 40px !important
+
+  #section_main .container
+    padding: 5px 20px 15px
+    .tab-content
+      padding: 0.8rem 0rem 0.8rem 0.75rem !important
+      .list h4
+        font-size: 1rem !important
+      .price
+        padding: 0.5rem 0.75rem !important
+        span
+          font-size: 1.4rem !important
+          &:before, &:after
+            font-size: 0.6rem !important
+    .main_img img
+      width: 100% !important
+    .content .all-tab
+      margin: 0.5rem auto !important
+      .tab-container
+        margin: 0 auto !important
+  #gotop
+    right: 30px
+    height: 40px
+    width: 45px
+    font-size: 14px
+    border-radius: 7px 7px 0 0
+    &:before
+      font-size: 12px
+    &:after
+      font-size: 12px
+      font-size: 14px
+      top: 60%
+    &:hover
+      height: 50px
+
+  #section_footer
+    .container
+      padding: 1.4rem 0 1rem
+      .row
+        margin: 0
+        .paymoney
+          position: initial !important
+          display: flex
+          justify-content: center
+          width: 100%
+          margin-top: 5px
+      .logo img
+        width: 75%
+      .contact
+        padding-top: 10px
+      .forphone
+        display: inline-block
+        ul
+          line-height: 20px
+          padding: 0 5px
+          font-size: 0.9rem
+          .table_big
+            font-size: 1rem
+      .qrcode
+        display: none
+      .forpc
+        display: none
