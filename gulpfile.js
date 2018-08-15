@@ -28,15 +28,6 @@ gulp.task('copyHTML', function(){
 gulp.task('pug', function(){
   gulp.src('./source/**/*.pug')
     .pipe($.plumber())
-    .pipe($.data(function (file) {
-      var json = require('./source/data/data.json');
-      var menus = require('./source/data/menu.json');
-      var source = {
-        data: json,
-        menus: menus
-      }
-      return source;
-    }))
     .pipe($.pug({
       pretty: true
     }))
